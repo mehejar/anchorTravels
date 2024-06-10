@@ -6,10 +6,10 @@ const Navbar = () => {
 
     const navLinks = <>
 
-        <NavLink to='/'><li className="text-lg font-semibold"><a>Home</a></li></NavLink>
-        <NavLink to='/shop'><li className="text-lg  font-semibold"><a>All Category</a></li></NavLink>
-        <NavLink to='/dashboard'><li className="text-lg font-semibold"><a>Dashboard</a></li></NavLink>
-        <NavLink to='/contact'><li className="text-lg font-semibold"><a>Contact</a></li></NavLink>
+        <NavLink to='/'><li className="text-lg lg:text-white font-semibold"><a>Home</a></li></NavLink>
+        <NavLink to='/shop'><li className="text-lg lg:text-white  font-semibold"><a>All Category</a></li></NavLink>
+        <NavLink to='/dashboard'><li className="text-lg lg:text-white font-semibold"><a>Dashboard</a></li></NavLink>
+        <NavLink to='/contact'><li className="text-lg lg:text-white font-semibold"><a>Contact</a></li></NavLink>
 
         
 
@@ -23,8 +23,8 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100">
-            <div className="navbar-start">
+        <div className="navbar">
+            <div className="navbar-start z-10">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -43,8 +43,8 @@ const Navbar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-            <NavLink to={'/login'}><button className="py-2 px-4 flex gap-2 items-center text-white bg-blue-500 rounded-sm bg-anchor font-semibold"><RiLoginBoxLine></RiLoginBoxLine>Sign Up</button></NavLink>
+            <div className="navbar-end z-10">
+            <NavLink to={'/login'}><button className="py-2 px-4 flex gap-2 items-center text-white  bg-blue-500 rounded-sm bg-anchor font-semibold"><RiLoginBoxLine></RiLoginBoxLine>Sign Up</button></NavLink>
                 
                 
                 

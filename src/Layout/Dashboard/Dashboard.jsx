@@ -4,7 +4,7 @@ import { IoMdListBox } from "react-icons/io";
 import { FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom"
 import { FaPlaneDeparture } from "react-icons/fa";
-import logo from "../../assets/Logo-01.png"
+import logo from "../../assets/yy.png"
 import UserDashboard from "./UserDashboard";
 
 
@@ -17,8 +17,8 @@ const Dashboard = () => {
         <div>
             { isAdmin?
                 <div className="">
-                <div className="  drop-shadow-xl bg-[#ffffff]">
-                    <div className="menu mt-4 ml-8 flex flex-row">
+                <div className="  drop-shadow-sm bg-[#ffffff]">
+                    <div className="menu mt-4 ml-8 flex items-center flex-row">
                         
                             
                                
@@ -33,9 +33,11 @@ const Dashboard = () => {
     
                                     <li><NavLink className="flex gap-2 py-4 items-center  uppercase" to="/dashboard/manageplans"><RiMenuSearchFill></RiMenuSearchFill>Manage Plan</NavLink></li>
     
-                                    <li><NavLink className="flex gap-2 py-4 items-center  uppercase" to="/dashboard/manageorders"><IoMdListBox></IoMdListBox>Manage Bookings</NavLink></li>
+                                    <li><NavLink className="flex gap-2 py-4 items-center  uppercase" to="/dashboard/manageBooking"><IoMdListBox></IoMdListBox>Manage Bookings</NavLink></li>
     
                                     <li><NavLink className="flex gap-2 py-4 uppercase  items-center" to="/dashboard/allUsers"><FaUsers></FaUsers>All Users</NavLink></li>
+
+                                    <li><NavLink className="flex gap-2 py-4 uppercase  items-center" to="/dashboard/addBlog"><FaUsers></FaUsers>Add Blog</NavLink></li>
     
                             
     
@@ -47,7 +49,6 @@ const Dashboard = () => {
     
                         <li><NavLink className="flex gap-2 py-4 uppercase items-center" to="/"><FaHome></FaHome>Home</NavLink></li>
     
-                        <li><NavLink className="flex gap-2 py-4 uppercase  items-center" to="/"><FaPalette></FaPalette> Menu</NavLink></li>
                     </div>
     
                 </div>
