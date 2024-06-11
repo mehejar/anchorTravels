@@ -30,7 +30,7 @@ const Blog = () => {
                                     {
                                         item.article.length > 100 ? <p className="text-gray-600">{item.article.slice(0, 100)}</p> : <p>{item.article}</p>
                                     }
-                                    <Link to={`/blogs/${item._id}`}><button className="py-2 my-2 px-4 rounded-md bg-blue-100 text-blue-600 hover:bg-blue-600 flex gap-2 items-center hover:text-white font-semibold">Read more<FaArrowRight></FaArrowRight></button></Link>
+                                    {/* <Link to={`/blogs/${item._id}`}><button className="py-2 my-2 px-4 rounded-md bg-blue-100 text-blue-600 hover:bg-blue-600 flex gap-2 items-center hover:text-white font-semibold">Read more<FaArrowRight></FaArrowRight></button></Link> */}
                                 </div>
 
                             </div>
