@@ -1,6 +1,8 @@
 import { createContext, useEffect, useState } from "react"
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "firebase/auth";
 
+import { getMessaging } from "firebase/messaging";
+
 // import axios from "axios";
 import { app } from "../../../firebase.config";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
@@ -9,6 +11,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
  export const AuthContex = createContext(null);
  const auth = getAuth(app)
+ 
 
 const AuthProvider = ({children}) =>{
     const [user, setUser] = useState([])
@@ -66,7 +69,7 @@ const AuthProvider = ({children}) =>{
         loading,
         createuser,
         logOut,
-        login
+        login,
     }
     return(
         <AuthContex.Provider value={authInfo}>

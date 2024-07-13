@@ -12,6 +12,8 @@ import BlogDetails from "../Pages/Home/Blog.jsx/BlogDetails";
 import ManageBookings from "../Pages/ManageBookings/ManageBooking";
 import Contact from "../Pages/Contact/Contact";
 import BlogPage from "../Pages/Home/Blog.jsx/BlogPage";
+import AllUsers from "../Layout/Dashboard/AllUsers";
+import About from "../Pages/About US/About";
 // import ManageBookings from "../Pages/ManageBookings/ManageBooking";
 
 export const router = createBrowserRouter([
@@ -38,6 +40,11 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://y-lime-beta.vercel.app/plans/${params.id}`)
             },
             {
+                path: 'blogPage/blogs/:id',
+                element: <BlogDetails></BlogDetails>,
+                loader: ({ params }) => fetch(`https://y-lime-beta.vercel.app/blogs/${params.id}`)
+            },
+            {
                 path: '/blogs/:id',
                 element: <BlogDetails></BlogDetails>,
                 loader: ({ params }) => fetch(`https://y-lime-beta.vercel.app/blogs/${params.id}`)
@@ -45,6 +52,10 @@ export const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/About',
+                element: <About></About>
             },
             {
                 path: '/blogPage',
@@ -72,6 +83,10 @@ export const router = createBrowserRouter([
                 path: 'manageBooking',
                 element: <ManageBookings></ManageBookings>
             },
+            {
+                path: 'allUsers',
+                element: <AllUsers></AllUsers>
+            }
         ]
     }
 ])

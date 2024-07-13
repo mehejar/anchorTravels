@@ -11,6 +11,7 @@ import { FaDotCircle } from "react-icons/fa";
 import { FaRegCircleDot } from "react-icons/fa6";
 import { IoAirplane } from "react-icons/io5";
 import { useForm } from "react-hook-form"
+import emailjs from '@emailjs/browser';
 
 
 

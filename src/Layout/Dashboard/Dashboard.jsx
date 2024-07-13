@@ -2,15 +2,16 @@ import { FaCalendar, FaHome, FaPalette, FaShoppingCart } from "react-icons/fa"
 import { RiMenuSearchFill } from "react-icons/ri";
 import { IoMdListBox } from "react-icons/io";
 import { FaUsers } from "react-icons/fa";
-import { NavLink, Outlet } from "react-router-dom"
+import { Link, NavLink, Outlet } from "react-router-dom"
 import { FaPlaneDeparture } from "react-icons/fa";
 import logo from "../../assets/yy.png"
 import UserDashboard from "./UserDashboard";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 const Dashboard = () => {
-    // const [isAdmin] = useAdmin()
-    const isAdmin = true
+    const [isAdmin] = useAdmin()
+    // const isAdmin = true
 
     
     return (
@@ -23,7 +24,7 @@ const Dashboard = () => {
                             
                                
                                     <li>
-                                        <img className="w-[200px]" src={logo} alt="" />
+                                        <Link to={'/'}><img className="w-[200px]" src={logo} alt="" /></Link>
                                         
                                     </li>
                                     <div className="divider"></div>

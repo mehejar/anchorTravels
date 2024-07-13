@@ -5,10 +5,13 @@ import { IoAirplane } from "react-icons/io5"
 import { useLoaderData } from "react-router-dom"
 import useAxiosSecure from "../../Hooks/useAxiosSecure"
 import Swal from "sweetalert2"
+import emailjs from '@emailjs/browser';
+import { useRef } from "react"
 
 const PlanDetails = () => {
 
     const plan = useLoaderData()
+    
 
     const { name, country, to, description, from, offer, image } = plan
     const axiosSecure = useAxiosSecure()
@@ -16,7 +19,25 @@ const PlanDetails = () => {
     const { register, handleSubmit, reset } = useForm()
     const onSubmit = async (data) => {
         // console.log(data)
+        const templeteParams = {
+            pessengerName: data.pessengerName,
+            contact: data.contact,
+        
+        }
         // image hosting api
+        emailjs
+        .sendForm('service_ka399te', 'template_s82swrk', templeteParams, {
+          publicKey: 'HGe7WeP6yL7NRc11H',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+        
 
 
        
@@ -51,6 +72,7 @@ const PlanDetails = () => {
             }
        
     }
+    
 
 
     return (
@@ -75,7 +97,9 @@ const PlanDetails = () => {
                 <div>
                     <h1 className="text-lg pt-4 font-semibold">Fill the form for getting best price</h1>
                 </div>
-                <form className="" onSubmit={handleSubmit(onSubmit)}>
+                <form
+                
+                 className=""  onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="my-6">
                         <label className="label">

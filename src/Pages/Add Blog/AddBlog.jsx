@@ -28,6 +28,7 @@ const AddBlog = () => {
                 article: data.blog,
                 title: data.title,
                 image: res.data.data.display_url,
+                date: new Date()
 
             }
             console.log(blog)
@@ -36,8 +37,8 @@ const AddBlog = () => {
             if (blogRes.data.insertedId) {
                 reset()
                 Swal.fire({
-                    title: "Added Products!",
-                    text: "You added a new product",
+                    title: "Added A Blog!",
+                    text: "You added a new Blog post",
                     icon: "success"
                 });
 
